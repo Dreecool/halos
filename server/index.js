@@ -14,8 +14,12 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server, {
   cors: {
-    origin: ["https://halos-lyyb.vercel.app"]
-  }
+        origin: "https://halos-lyyb.vercel.app",
+        methods: ["GET", "POST"],
+        transports: ['websocket', 'polling'],
+        credentials: true
+    },
+    allowEIO3: true
 });
 
 mongoose.connect("mongodb+srv://francesdonaire:chatforte123456@chat-forte-db.xnufm5f.mongodb.net/chat-forte?retryWrites=true&w=majority", {
