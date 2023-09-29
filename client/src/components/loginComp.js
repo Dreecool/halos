@@ -8,7 +8,7 @@ import io from "socket.io-client";
 const LoginComponents = () => {
 
   
-  const socket = io("http://localhost:3001");
+  const socket = io("https://halos-wheat.vercel.app");
   Axios.defaults.withCredentials = true
   const Navigate = useNavigate()
   
@@ -29,7 +29,7 @@ const LoginComponents = () => {
     e.preventDefault();
 
     try {
-      const response = await Axios.post("http://localhost:3001/loginUser", loginInfo);
+      const response = await Axios.post("https://halos-wheat.vercel.app/loginUser", loginInfo);
       const token = response.data.tok;
 
       const expirationDate = new Date();
@@ -58,7 +58,7 @@ const LoginComponents = () => {
 
         try {
 
-          const response = await Axios.get("http://localhost:3001/protectedRoute");
+          const response = await Axios.get("https://halos-wheat.vercel.app/protectedRoute");
 
           if (response.data.message === "Authorized") {
 
