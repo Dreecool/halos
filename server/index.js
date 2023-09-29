@@ -15,7 +15,6 @@ const socket = require("socket.io");
 const io = socket(server, {
   cors: {
         origin: "https://halos-lyyb.vercel.app",
-        methods: ["GET", "POST"],
         transports: ['websocket', 'polling'],
         credentials: true
     },
