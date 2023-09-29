@@ -12,14 +12,7 @@ const secretKey = crypto.randomBytes(32).toString('hex');
 const http = require("http");
 const server = http.createServer(app);
 const socket = require("socket.io");
-const io = socket(server, {
-  cors: {
-        origin: "https://halos-lyyb.vercel.app",
-        transports: ['websocket', 'polling'],
-        credentials: true
-    },
-    allowEIO3: true
-});
+const io = socket(server);
 
 mongoose.connect("mongodb+srv://francesdonaire:chatforte123456@chat-forte-db.xnufm5f.mongodb.net/chat-forte?retryWrites=true&w=majority", {
   useNewUrlParser: true,
