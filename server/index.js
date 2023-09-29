@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server, {
   cors: {
-    origin: ["http://localhost:3000"]
+    origin: ["https://halos-lyyb.vercel.app"]
   }
 });
 
@@ -28,7 +28,7 @@ const Message = require("./model/messages");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://halos-lyyb.vercel.app"],
     methods: ["POST, GET, DELETE, PUT"],
     credentials: true,
   })
