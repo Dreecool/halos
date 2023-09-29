@@ -11,7 +11,7 @@ const MessagePage = ({ userID }) => {
 
     if (Array.isArray(userID)) {
 
-      Axios.get("http://localhost:3001/getList")
+      Axios.get("https://halos-wheat.vercel.app/getList")
         .then(async (response) => {
           await userID.map(async (val) => {
             console.log();
